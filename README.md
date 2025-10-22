@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# GIFs Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple academic project to practice React, file uploads, and state management. This app allows users to upload GIFs from their computer and view them in a gallery.
 
-Currently, two official plugins are available:
+## Features
+- Upload GIF files from your computer
+- View uploaded GIFs in a gallery
+- Responsive UI
+- Practice with React state and file handling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+```bash
+git clone https://github.com/IgnacioSotelo5/gifs-gallery.git
+cd gifs-gallery
+npm install
+# or
+yarn install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### Running the App
+```bash
+npm run dev
+# or
+yarn dev
 ```
+
+The app will be available at `http://localhost:5173`.
+
+## Project Structure
+```
+gifs-gallery/
+  src/
+    components/
+    ...
+```
+
+## Notes
+- This project was created for academic purposes and as a React practice exercise.
+
+## License
+MIT
