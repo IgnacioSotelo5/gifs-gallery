@@ -18,14 +18,19 @@ function App() {
   }, [])
 
   const handleFileUpload = (file: File) => {
-      const url = URL.createObjectURL(file)
-      const gif = {
-        id: crypto.randomUUID(),
-        url,
-        alt: ''
+    if(file.type === 'image/gif'){
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        const gif = {
+          id: crypto.randomUUID(),
+          url: reader.result as string,
+          alt: file.name
+        }
+        window.localStorage.setItem('gifs', JSON.stringify([...gifs, gif]))
+        setGifs((prevState) => [...prevState, gif])
       }
-      window.localStorage.setItem('gifs', JSON.stringify([...gifs, gif]))
-      setGifs((prevState) => [...prevState, gif])
+      reader.readAsDataURL(file)
+    }
   }
 
   
